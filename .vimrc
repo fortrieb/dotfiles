@@ -4,10 +4,12 @@ set nocompatible
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
-" navigation sidebar
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Default configs for getting started with Vim
 Plug 'tpope/vim-sensible'
+" commenting 
+Plug 'scrooloose/nerdcommenter'
+" navigation sidebar
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " checker
 Plug 'scrooloose/syntastic'
 " fuzzy search
@@ -18,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 call plug#end()
 
 syntax on
+filetype plugin on
 set number
 
 " status line
@@ -53,3 +56,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" NERDCommenter
+"
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
