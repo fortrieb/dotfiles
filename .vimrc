@@ -19,9 +19,11 @@ Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
+" some useful defaults
 syntax on
 filetype plugin on
 set number
+let mapleader=","
 
 " status line
 set statusline=%f\ -\ FileType:\ %y		" file seperato typ
