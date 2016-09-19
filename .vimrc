@@ -16,6 +16,10 @@ Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
 " git wrapper
 Plug 'tpope/vim-fugitive'
+" show git line addings
+Plug 'airblade/vim-gitgutter'
+" auto completion
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
