@@ -9,17 +9,17 @@ Plug 'tpope/vim-sensible'
 " commenting 
 Plug 'scrooloose/nerdcommenter'
 " navigation sidebar
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 " checker
 Plug 'scrooloose/syntastic'
-" fuzzy search
+"" fuzzy search
 Plug 'kien/ctrlp.vim'
-" git wrapper
+"" git wrapper
 Plug 'tpope/vim-fugitive'
-" show git line addings
+"" show git line addings
 Plug 'airblade/vim-gitgutter'
 " auto completion
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 
 call plug#end()
 
@@ -33,7 +33,8 @@ let mapleader=","
 set statusline=%f\ -\ FileType:\ %y		" file seperato typ
 set statusline+=%l    " Current line
 set statusline+=/    " Separator
-set statusline+=%L   " Total lines
+set statusline+=%*
+set statusline+=%=%-14.(%l,%c%V%)\ %p%%		" align right navigation
 
 " Tab and softtab
 set tabstop=4
