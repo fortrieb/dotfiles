@@ -30,10 +30,8 @@ set number
 let mapleader=","
 
 " status line
-set statusline=%f\ -\ FileType:\ %y		" file seperato typ
-set statusline+=%l    " Current line
-set statusline+=/    " Separator
-set statusline+=%*
+set statusline=%f\ -\ FileType:\ %y			" file seperato typ
+set statusline+=%*							" space
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%		" align right navigation
 
 " Tab and softtab
