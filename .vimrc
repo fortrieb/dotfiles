@@ -20,6 +20,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " auto completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+" typescript support
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
