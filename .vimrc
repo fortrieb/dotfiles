@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " auto completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 " typescript support
 Plug 'leafgarland/typescript-vim'
 
@@ -68,3 +69,8 @@ let g:syntastic_check_on_wq = 0
 "
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
+
+" YouCompleteMe
+"
+" configuration
+
