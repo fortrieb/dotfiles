@@ -12,11 +12,13 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 " checker
 Plug 'scrooloose/syntastic'
-"" fuzzy search
+" fuzzy search
 Plug 'kien/ctrlp.vim'
-"" git wrapper
+" Golang plug
+Plug 'fatih/vim-go'
+" git wrapper
 Plug 'tpope/vim-fugitive'
-"" show git line addings
+" show git line addings
 Plug 'airblade/vim-gitgutter'
 " auto completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
