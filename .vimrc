@@ -36,6 +36,7 @@ let mapleader=","
 
 " status line
 set statusline=%f\ -\ FileType:\ %y			" file seperato typ
+set statusline+=%{fugitive#statusline()}	" space
 set statusline+=%*							" space
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%		" align right navigation
 
