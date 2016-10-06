@@ -49,6 +49,11 @@ set noexpandtab
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
 
+" vim-go settings
+"
+" Enable goimports to automatically insert import paths instead of gofmt
+let g:go_fmt_command = "goimports"
+
 " Plugin settings
 "
 " NERDTree
@@ -61,6 +66,11 @@ map <C-n> :NERDTreeToggle<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+" use multiple checkers
+"let g:syntastic_aggregate_errors = 1
+" set golang checkers
+let g:syntastic_go_checkers = ['golint']
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
