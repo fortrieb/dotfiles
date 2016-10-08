@@ -16,6 +16,8 @@ Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
 " Golang plug
 Plug 'fatih/vim-go'
+" Switching between companion files
+Plug 'derekwyatt/vim-fswitch'
 " git wrapper
 Plug 'tpope/vim-fugitive'
 " show git line addings
