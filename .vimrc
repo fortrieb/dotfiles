@@ -12,14 +12,21 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 " checker
 Plug 'scrooloose/syntastic'
-"" fuzzy search
+" fuzzy search
 Plug 'kien/ctrlp.vim'
-"" git wrapper
+" Golang plug
+Plug 'fatih/vim-go'
+" Switching between companion files
+Plug 'derekwyatt/vim-fswitch'
+" git wrapper
 Plug 'tpope/vim-fugitive'
-"" show git line addings
+" show git line addings
 Plug 'airblade/vim-gitgutter'
 " auto completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+" typescript support
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
@@ -31,6 +38,7 @@ let mapleader=","
 
 " status line
 set statusline=%f\ -\ FileType:\ %y			" file seperato typ
+set statusline+=%{fugitive#statusline()}	" space
 set statusline+=%*							" space
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%		" align right navigation
 
@@ -48,6 +56,11 @@ highlight ColorColumn ctermbg=darkgray
 au BufRead *.md setlocal spell
 au BufRead *.markdown setlocal spell
 
+" vim-go settings
+"
+" Enable goimports to automatically insert import paths instead of gofmt
+let g:go_fmt_command = "goimports"
+
 " Plugin settings
 "
 " NERDTree
@@ -61,6 +74,11 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" use multiple checkers
+"let g:syntastic_aggregate_errors = 1
+" set golang checkers
+let g:syntastic_go_checkers = ['golint']
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -70,3 +88,9 @@ let g:syntastic_check_on_wq = 0
 "
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
+
+" YouCompleteMe
+"
+" configuration
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
