@@ -44,6 +44,10 @@ set noexpandtab
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
 
+" Enable spell checking for markdown files
+au BufRead *.md setlocal spell
+au BufRead *.markdown setlocal spell
+
 " Plugin settings
 "
 " NERDTree
