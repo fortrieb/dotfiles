@@ -5,30 +5,30 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 " Default configs for getting started with Vim
-Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible', { 'tag': 'v1.1' }
 " commenting 
-Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter', { 'tag': '2.4.0' }
 " navigation sidebar
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' }
 " checker
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', { 'tag': '3.8.0' }
 " fuzzy search
-Plug 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim', { 'branch': 'master' }
 " Golang plug
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'tag': 'v1.10' }
 " Switching between companion files
-Plug 'derekwyatt/vim-fswitch'
+Plug 'derekwyatt/vim-fswitch', { 'branch': 'master' }
 " git wrapper
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive', { 'tag': 'v2.2' }
 " show git line addings
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter', { 'branch': 'master' }
 " auto completion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'branch': 'master', 'do': './install.py --clang-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 " typescript support
-Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim', { 'branch': 'master' }
 " vim tex support
-Plug 'lervag/vimtex'
+Plug 'lervag/vimtex', { 'branch': 'master' }
 
 call plug#end()
 
