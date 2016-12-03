@@ -27,6 +27,8 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 " typescript support
 Plug 'leafgarland/typescript-vim'
+" vim tex support
+Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -94,3 +96,8 @@ let g:NERDSpaceDelims = 1
 " configuration
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" VimTex
+"
+" PDF viewer
+let g:latex_view_general_viewer='evince'
