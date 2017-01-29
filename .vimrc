@@ -65,6 +65,10 @@ highlight ColorColumn ctermbg=darkgray
 set colorcolumn=120
 highlight Visual ctermfg=darkred ctermbg=darkgray
 
+" Enable spell checking for markdown files
+au BufRead *.md setlocal spell
+au BufRead *.markdown setlocal spell
+
 " vim-go settings
 "
 " Enable goimports to automatically insert import paths instead of gofmt
