@@ -29,6 +29,16 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'leafgarland/typescript-vim', { 'branch': 'master' }
 " vim tex support
 Plug 'lervag/vimtex', { 'branch': 'master' }
+" Vim plugin, provides insert mode auto-completion for quotes, parens,
+" brackets, etc
+"Plug 'raimondi/delimitmate', { 'branch': 'master' }
+" emmet for vim
+Plug 'mattn/emmet-vim', { 'branch': 'master' }
+" HTML5 omnicomplete and syntax
+Plug 'othree/html5.vim', { 'branch': 'master' }
+" Syntax highlighting for vue.js components
+Plug 'posva/vim-vue'
+
 
 call plug#end()
 
@@ -51,8 +61,9 @@ set shiftwidth=4
 set noexpandtab
 
 " highlight colum
-set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
+set colorcolumn=120
+highlight Visual ctermfg=darkred ctermbg=darkgray
 
 " vim-go settings
 "
@@ -96,4 +107,4 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " VimTex
 "
 " PDF viewer
-let g:latex_view_general_viewer='evince'
+let g:vimtex_view_general_viewer='evince'
