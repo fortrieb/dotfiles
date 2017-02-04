@@ -5,30 +5,40 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 " Default configs for getting started with Vim
-Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible', { 'tag': 'v1.1' }
 " commenting 
-Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter', { 'tag': '2.4.0' }
 " navigation sidebar
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' }
 " checker
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', { 'tag': '3.8.0' }
 " fuzzy search
-Plug 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim', { 'branch': 'master' }
 " Golang plug
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'tag': 'v1.10' }
 " Switching between companion files
-Plug 'derekwyatt/vim-fswitch'
+Plug 'derekwyatt/vim-fswitch', { 'branch': 'master' }
 " git wrapper
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive', { 'tag': 'v2.2' }
 " show git line addings
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter', { 'branch': 'master' }
 " auto completion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'branch': 'master', 'do': './install.py --clang-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 " typescript support
-Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim', { 'branch': 'master' }
 " vim tex support
-Plug 'lervag/vimtex'
+Plug 'lervag/vimtex', { 'branch': 'master' }
+" Vim plugin, provides insert mode auto-completion for quotes, parens,
+" brackets, etc
+"Plug 'raimondi/delimitmate', { 'branch': 'master' }
+" emmet for vim
+Plug 'mattn/emmet-vim', { 'branch': 'master' }
+" HTML5 omnicomplete and syntax
+Plug 'othree/html5.vim', { 'branch': 'master' }
+" Syntax highlighting for vue.js components
+Plug 'posva/vim-vue'
+
 
 call plug#end()
 
@@ -51,8 +61,9 @@ set shiftwidth=4
 set noexpandtab
 
 " highlight colum
-set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
+set colorcolumn=120
+highlight Visual ctermfg=darkred ctermbg=darkgray
 
 " Enable spell checking for markdown files
 au BufRead *.md setlocal spell
@@ -102,4 +113,4 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " VimTex
 "
 " PDF viewer
-let g:latex_view_general_viewer='evince'
+let g:vimtex_view_general_viewer='evince'
