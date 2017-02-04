@@ -56,6 +56,7 @@ highlight ColorColumn ctermbg=darkgray
 
 " Enable spell checking for markdown files
 au BufRead *.md setlocal spell
+au BufRead *.MD setlocal spell
 au BufRead *.markdown setlocal spell
 
 " vim-go settings
@@ -68,6 +69,7 @@ let g:go_fmt_command = "goimports"
 " NERDTree
 " Ctrl-n to toggle Nerdtree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.aux$','\.fdb_latexmk$','\.fls$','\.synctex.gz$','\.lof$','\.tdo$','\.toc$','\.out$','\.blg$','\.bbl$']
 
 " Syntactic
 "
