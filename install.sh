@@ -5,6 +5,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo "Link .vimrc file to ~/.vimrc"
 ln -s $PWD/.vimrc $HOME/.vimrc
+echo "Link .tmux.conf file to ~/.tmux.conf"
+ln -s $PWD/.tmux.conf $HOME/.tmux.conf
+
 echo "Run vim with exec command"
 vim +PlugInstall +qall
 
