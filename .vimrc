@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 " Default configs for getting started with Vim
 Plug 'tpope/vim-sensible', { 'tag': 'v1.1' }
 " commenting 
-Plug 'scrooloose/nerdcommenter', { 'tag': '2.4.0' }
+Plug 'scrooloose/nerdcommenter', { 'tag': '2.5.0' }
 " navigation sidebar
 Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' }
 " checker
@@ -28,17 +28,19 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 " typescript support
 Plug 'leafgarland/typescript-vim', { 'branch': 'master' }
 " vim tex support
-Plug 'lervag/vimtex', { 'branch': 'master' }
-" Vim plugin, provides insert mode auto-completion for quotes, parens,
-" brackets, etc
-"Plug 'raimondi/delimitmate', { 'branch': 'master' }
+Plug 'lervag/vimtex', { 'tag': 'v2.1' }
+" all about surroundings
+Plug 'tpope/vim-surround', { 'branch': 'master' }
 " emmet for vim
 Plug 'mattn/emmet-vim', { 'branch': 'master' }
 " HTML5 omnicomplete and syntax
 Plug 'othree/html5.vim', { 'branch': 'master' }
 " Syntax highlighting for vue.js components
 Plug 'posva/vim-vue'
-
+" add warning deep indentation
+Plug 'dodie/vim-disapprove-deep-indentation'
+" ALE = Asynchronous Lint Engine
+Plug 'w0rp/ale', { 'tag': 'v1.1.1' }
 
 call plug#end()
 
