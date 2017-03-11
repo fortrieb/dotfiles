@@ -41,6 +41,10 @@ Plug 'posva/vim-vue'
 Plug 'dodie/vim-disapprove-deep-indentation'
 " ALE = Asynchronous Lint Engine
 Plug 'w0rp/ale', { 'tag': 'v1.1.1' }
+" auto intention
+Plug 'raimondi/delimitmate', { 'branch': 'master' }
+" Python syntax highlighting
+Plug 'vim-python/python-syntax'
 
 call plug#end()
 
@@ -111,6 +115,9 @@ let g:NERDSpaceDelims = 1
 " configuration
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Vim-Python
+let g:python_highlight_all = 1
 
 " VimTex
 "
