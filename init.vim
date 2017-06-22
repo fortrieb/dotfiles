@@ -1,6 +1,8 @@
 call plug#begin('~/.local/share/nvim/plugged')
 " commenting 
 Plug 'scrooloose/nerdcommenter', { 'tag': '2.5.0' }
+" fuzzy search
+Plug 'kien/ctrlp.vim', { 'branch': 'master' }
 " Golang Plugin
 Plug 'fatih/vim-go'
 " File viewer
@@ -13,6 +15,8 @@ Plug 'zchee/deoplete-jedi'
 Plug 'derekwyatt/vim-fswitch', { 'branch': 'master' }
 " git wrapper
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.2' }
+" show git line addings
+Plug 'airblade/vim-gitgutter', { 'branch': 'master' }
 " all about surroundings
 Plug 'tpope/vim-surround', { 'branch': 'master' }
 " emmet for vim
