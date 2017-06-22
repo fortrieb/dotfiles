@@ -10,25 +10,18 @@ Plug 'tpope/vim-sensible', { 'tag': 'v1.1' }
 Plug 'scrooloose/nerdcommenter', { 'tag': '2.5.0' }
 " navigation sidebar
 Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' }
-" checker
-Plug 'scrooloose/syntastic', { 'tag': '3.8.0' }
 " fuzzy search
 Plug 'kien/ctrlp.vim', { 'branch': 'master' }
 " Golang plug
-Plug 'fatih/vim-go', { 'tag': 'v1.10' }
+Plug 'fatih/vim-go', { 'tag': 'v1.13' }
 " Switching between companion files
 Plug 'derekwyatt/vim-fswitch', { 'branch': 'master' }
 " git wrapper
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.2' }
 " show git line addings
 Plug 'airblade/vim-gitgutter', { 'branch': 'master' }
-" auto completion
-Plug 'Valloric/YouCompleteMe', { 'branch': 'master', 'do': './install.py --clang-completer' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 " typescript support
 Plug 'leafgarland/typescript-vim', { 'branch': 'master' }
-" vim tex support
-Plug 'lervag/vimtex', { 'tag': 'v2.1' }
 " all about surroundings
 Plug 'tpope/vim-surround', { 'branch': 'master' }
 " emmet for vim
@@ -39,19 +32,23 @@ Plug 'othree/html5.vim', { 'branch': 'master' }
 Plug 'posva/vim-vue'
 " add warning deep indentation
 Plug 'dodie/vim-disapprove-deep-indentation'
+" Autocompletion
+Plug 'valloric/youcompleteme'
 " ALE = Asynchronous Lint Engine
-Plug 'w0rp/ale', { 'tag': 'v1.1.1' }
+Plug 'w0rp/ale', { 'tag': 'v1.3.1' }
 " auto intention
 Plug 'raimondi/delimitmate', { 'branch': 'master' }
 " Python syntax highlighting
 Plug 'vim-python/python-syntax'
+" Airline statusbar
+"Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
 " some useful defaults
 syntax on
 filetype plugin on
-set number
+" set number
 let mapleader=","
 
 " status line
@@ -69,12 +66,21 @@ set noexpandtab
 " highlight colum
 highlight ColorColumn ctermbg=darkgray
 set colorcolumn=120
-highlight Visual ctermfg=darkred ctermbg=darkgray
+highlight Visual ctermfg=darkred ctermbg=gray
+highlight CursorLine cterm=None ctermbg=darkgray
 
 " Enable spell checking for markdown files
 au BufRead *.md setlocal spell
 au BufRead *.MD setlocal spell
 au BufRead *.markdown setlocal spell
+
+" linenumbering
+" 
+" relative instead of absolute
+set relativenumber
+" but not on insert mode
+autocmd InsertEnter * set number
+autocmd InsertLeave * set relativenumber
 
 " vim-go settings
 "
@@ -87,23 +93,6 @@ let g:go_fmt_command = "goimports"
 " Ctrl-n to toggle Nerdtree
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.aux$','\.fdb_latexmk$','\.fls$','\.synctex.gz$','\.lof$','\.tdo$','\.toc$','\.out$','\.blg$','\.bbl$']
-
-" Syntactic
-"
-" well known defaulst for beginner
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" use multiple checkers
-"let g:syntastic_aggregate_errors = 1
-" set golang checkers
-let g:syntastic_go_checkers = ['golint']
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " NERDCommenter
 "
