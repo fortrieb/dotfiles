@@ -22,12 +22,15 @@ Plug 'tpope/vim-surround', { 'branch': 'master' }
 " emmet for vim
 Plug 'mattn/emmet-vim', { 'branch': 'master' }
 " ALE = Asynchronous Lint Engine
-Plug 'w0rp/ale', { 'tag': 'v1.3.1' }
+Plug 'w0rp/ale' ", { 'tag': 'v1.3.1' }
+Plug 'vim-airline/vim-airline'
+
 call plug#end()
 
 " some useful defaults
 syntax on
 filetype plugin on
+colorscheme desert
 " set number
 let mapleader=","
 " Enable spell checking for markdown files
