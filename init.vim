@@ -25,14 +25,32 @@ Plug 'tpope/vim-surround', { 'branch': 'master' }
 " emmet for vim
 Plug 'mattn/emmet-vim', { 'branch': 'master' }
 " ALE = Asynchronous Lint Engine
-Plug 'w0rp/ale', { 'tag': 'v1.3.1' }
+Plug 'w0rp/ale' ", { 'tag': 'v1.3.1' }
+Plug 'vim-airline/vim-airline'
 " Autoclosing 
 Plug 'jiangmiao/auto-pairs'
+" Snippet manager
+Plug 'Shougo/neosnippet'
 call plug#end()
 
 " some useful defaults
 syntax on
 filetype plugin on
+
+"Credit joshdick
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+"if (empty($TMUX))
+"  if (has("termguicolors"))
+"    set termguicolors
+"  endif
+"endif
+
+
+" set background=light " for the light version
+colorscheme delek
+
 " set number
 let mapleader=","
 " Enable spell checking for markdown files
@@ -59,9 +77,45 @@ let g:deoplete#enable_at_startup = 1
 "
 let g:go_fmt_command = "goimports"
 au BufRead,BufNewFile *.go set filetype=go
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+" Enable same variable highlight
+let g:go_auto_sameids = 1
+let g:go_auto_type_info = 1
+let g:go_addtags_transform = "snakecase"
+let g:go_snippet_engine = "neosnippet"
+" open Go definition
+" go back with C-t
+au FileType go nmap <F12> <Plug>(go-def)
 
 " Golang deoplete
 "
 let g:deoplete#sources#go#gocode_binary = "$GOPATH/bin/gocode"
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
+let g:ale_linters = {'go': ['gometalinter']} 
+
+" Gometalinter
+"
+let g:go_metalinter_deadline = "5s"
+let g:go_metalinter_enabled = [
+    \ 'deadcode',
+    \ 'errcheck',
+    \ 'gas',
+    \ 'goconst',
+    \ 'gocyclo',
+    \ 'golint',
+    \ 'gosimple',
+    \ 'ineffassign',
+    \ 'vet',
+    \ 'vetshadow'
+    \]
+
+" Go function declaration
+au FileType go nmap <leader>gt :GoDeclsDir<cr>
