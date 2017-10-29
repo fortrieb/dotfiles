@@ -77,6 +77,7 @@ let g:deoplete#enable_at_startup = 1
 " Golang
 "
 let g:go_fmt_command = "goimports"
+au BufRead,BufNewFile *.go set filetype=go
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
