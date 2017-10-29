@@ -31,6 +31,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
 " Snippet manager
 Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 call plug#end()
 
 " some useful defaults
@@ -84,9 +85,11 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_variable_assignments = 1
 " Enable same variable highlight
 let g:go_auto_sameids = 1
-let g:go_auto_type_info = 1
+let g:go_auto_type_info = 0
 let g:go_addtags_transform = "snakecase"
 let g:go_snippet_engine = "neosnippet"
 " open Go definition
@@ -102,7 +105,9 @@ let g:ale_linters = {'go': ['gometalinter']}
 
 " Gometalinter
 "
-let g:go_metalinter_deadline = "5s"
+let g:go_metalinter_deadline = "10s"
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = [ 'errcheck', 'golint' ]
 let g:go_metalinter_enabled = [
     \ 'deadcode',
     \ 'errcheck',
