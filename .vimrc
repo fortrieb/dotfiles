@@ -1,5 +1,6 @@
 " no vi
 set nocompatible
+set shell=bash
 " Vimplug Plugin Manager for Vim
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
@@ -7,41 +8,26 @@ call plug#begin('~/.vim/plugged')
 " Default configs for getting started with Vim
 Plug 'tpope/vim-sensible', { 'tag': 'v1.1' }
 " commenting 
-Plug 'scrooloose/nerdcommenter', { 'tag': '2.5.0' }
-" navigation sidebar
-Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' }
-" fuzzy search
-Plug 'kien/ctrlp.vim', { 'branch': 'master' }
-" Golang plug
-Plug 'fatih/vim-go', { 'tag': 'v1.13' }
-" Switching between companion files
-Plug 'derekwyatt/vim-fswitch', { 'branch': 'master' }
-" git wrapper
-Plug 'tpope/vim-fugitive', { 'tag': 'v2.2' }
-" show git line addings
-Plug 'airblade/vim-gitgutter', { 'branch': 'master' }
-" typescript support
-Plug 'leafgarland/typescript-vim', { 'branch': 'master' }
-" all about surroundings
-Plug 'tpope/vim-surround', { 'branch': 'master' }
-" emmet for vim
-Plug 'mattn/emmet-vim', { 'branch': 'master' }
-" HTML5 omnicomplete and syntax
-Plug 'othree/html5.vim', { 'branch': 'master' }
-" Syntax highlighting for vue.js components
-Plug 'posva/vim-vue'
-" add warning deep indentation
-Plug 'dodie/vim-disapprove-deep-indentation'
-" Autocompletion
-Plug 'valloric/youcompleteme'
-" ALE = Asynchronous Lint Engine
-Plug 'w0rp/ale', { 'tag': 'v1.3.1' }
-" auto intention
-Plug 'raimondi/delimitmate', { 'branch': 'master' }
-" Python syntax highlighting
-Plug 'vim-python/python-syntax'
-" Airline statusbar
-"Plug 'vim-airline/vim-airline'
+"Plug 'scrooloose/nerdcommenter'
+"" navigation sidebar
+"Plug 'scrooloose/nerdtree'
+"" checker
+"Plug 'scrooloose/syntastic'
+"" fuzzy search
+"Plug 'kien/ctrlp.vim'
+"" Golang plug
+""Plug 'fatih/vim-go'
+"" Switching between companion files
+"Plug 'derekwyatt/vim-fswitch'
+"" git wrapper
+"Plug 'tpope/vim-fugitive'
+"" show git line addings
+"Plug 'airblade/vim-gitgutter'
+"" auto completion
+""Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+""Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+"" typescript support
+"Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
@@ -53,7 +39,7 @@ let mapleader=","
 
 " status line
 set statusline=%f\ -\ FileType:\ %y			" file seperato typ
-set statusline+=%{fugitive#statusline()}	" space
+"set statusline+=%{fugitive#statusline()}	" space
 set statusline+=%*							" space
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%		" align right navigation
 
@@ -82,33 +68,12 @@ set relativenumber
 autocmd InsertEnter * set number
 autocmd InsertLeave * set relativenumber
 
-" vim-go settings
-"
-" Enable goimports to automatically insert import paths instead of gofmt
-let g:go_fmt_command = "goimports"
 
 " Plugin settings
 "
-" NERDTree
-" Ctrl-n to toggle Nerdtree
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.aux$','\.fdb_latexmk$','\.fls$','\.synctex.gz$','\.lof$','\.tdo$','\.toc$','\.out$','\.blg$','\.bbl$']
 
-" NERDCommenter
+" Syntactic
 "
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-" YouCompleteMe
-"
-" configuration
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-
-" Vim-Python
-let g:python_highlight_all = 1
-
-" VimTex
-"
-" PDF viewer
-let g:vimtex_view_general_viewer='evince'
+" well known defaulst for beginner
+set statusline+=%#warningmsg#
+set statusline+=%*
