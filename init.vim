@@ -32,6 +32,8 @@ Plug 'jiangmiao/auto-pairs'
 " Snippet manager
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+" Latex
+Plug 'lervag/vimtex'
 call plug#end()
 
 " some useful defaults
@@ -68,6 +70,10 @@ colorscheme industry
 " but not on insert mode
 autocmd InsertEnter * set number
 autocmd InsertLeave * set relativenumber
+
+" Vimtex
+let g:vimtex_view_method = "general"
+let g:vimtex_viewer_general_viewer = "evince"
 " NERDCommenter
 "
 " Add spaces after comment delimiters by default
