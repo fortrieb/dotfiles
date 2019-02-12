@@ -32,6 +32,7 @@ Plug 'jiangmiao/auto-pairs'
 " Snippet manager
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'sbdchd/neoformat'
 " Latex
 Plug 'lervag/vimtex'
 call plug#end()
@@ -60,6 +61,12 @@ let mapleader=","
 au BufRead *.md setlocal spell
 au BufRead *.MD setlocal spell
 au BufRead *.markdown setlocal spell
+
+set spelllang=de
+
+" Python3 settings
+let g:python3_host_prog = "/usr/bin/python3"
+
 " NERDTree
 " Ctrl-n to toggle Nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -72,6 +79,7 @@ autocmd InsertEnter * set number
 autocmd InsertLeave * set relativenumber
 
 " Vimtex
+let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_method = "general"
 let g:vimtex_viewer_general_viewer = "evince"
 " NERDCommenter
