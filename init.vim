@@ -25,7 +25,7 @@ Plug 'tpope/vim-surround', { 'branch': 'master' }
 " emmet for vim
 Plug 'mattn/emmet-vim', { 'branch': 'master' }
 " ALE = Asynchronous Lint Engine
-Plug 'w0rp/ale' ", { 'tag': 'v1.3.1' }
+Plug 'w0rp/ale' ", { 'tag': 'v2.3.0 }
 Plug 'vim-airline/vim-airline'
 " Autoclosing 
 Plug 'jiangmiao/auto-pairs'
