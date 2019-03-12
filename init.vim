@@ -10,6 +10,8 @@ Plug 'godoctor/godoctor.vim'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 " File viewer
 Plug 'scrooloose/nerdtree'
+" Graphql
+Plug 'jparise/vim-graphql'
 " Autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Python autocompletion
