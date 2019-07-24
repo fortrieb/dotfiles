@@ -1,13 +1,23 @@
 #!/bin/bash
 
-echo "Get VIM Plug and create dir ~/.local/share/nvim/site/autoload"
+NVIM_CONFIG=$HOME/.config/nvim
+
+# Install missing dependencys to make NeoVim working
+pip3 install --user neovim
+
+echo "Get VIM Plug and create dir .vim/autoload"
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-echo "Link init.vim file to ~/.config/nvim/init.vim"
-mkdir -vp $HOME/.config/nvim
-ln -s $PWD/init.vim $HOME/.config/nvim/init.vim
+echo "Link .vimrc file to ~/.vimrc"
+if [ ! -d $NVIM_CONFIG ]
+then
+	mkdir -vp $NVIM_CONFIG
+fi
+	
+echo "Linking config files"
+ln -s $PWD/init.vim $NVIM_CONFIG/init.vim
 
-echo "Run neovim with exec command"
+echo "Run nvim with exec command"
 nvim +PlugInstall +qall
 
 if [ ! -f $HOME/.xprofile ]

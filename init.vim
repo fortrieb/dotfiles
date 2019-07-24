@@ -14,6 +14,12 @@ Plug 'godoctor/godoctor.vim'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 " File viewer
 Plug 'scrooloose/nerdtree'
+" Graphql
+Plug 'jparise/vim-graphql'
+" Autocompletion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Python autocompletion
+Plug 'zchee/deoplete-jedi'
 " Switching between companion files
 Plug 'derekwyatt/vim-fswitch', { 'branch': 'master' }
 " git wrapper
@@ -25,7 +31,7 @@ Plug 'tpope/vim-surround', { 'branch': 'master' }
 " emmet for vim
 Plug 'mattn/emmet-vim', { 'branch': 'master' }
 " ALE = Asynchronous Lint Engine
-Plug 'w0rp/ale' ", { 'tag': 'v1.3.1' }
+Plug 'w0rp/ale' ", { 'tag': 'v2.3.0 }
 Plug 'vim-airline/vim-airline'
 " Autoclosing 
 Plug 'jiangmiao/auto-pairs'
