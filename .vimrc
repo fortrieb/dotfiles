@@ -13,7 +13,7 @@ Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' }
 " fuzzy search
 Plug 'kien/ctrlp.vim', { 'branch': 'master' }
 " Golang plug
-Plug 'fatih/vim-go', { 'tag': 'v1.13' }
+Plug 'myitcv/govim'
 " Switching between companion files
 Plug 'derekwyatt/vim-fswitch', { 'branch': 'master' }
 " git wrapper
@@ -40,8 +40,6 @@ Plug 'w0rp/ale', { 'tag': 'v1.3.1' }
 Plug 'raimondi/delimitmate', { 'branch': 'master' }
 " Python syntax highlighting
 Plug 'vim-python/python-syntax'
-" Airline statusbar
-"Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -82,10 +80,10 @@ set relativenumber
 autocmd InsertEnter * set number
 autocmd InsertLeave * set relativenumber
 
-" vim-go settings
+" govim settings
 "
-" Enable goimports to automatically insert import paths instead of gofmt
-let g:go_fmt_command = "goimports"
+" Print context information on cursor position
+nmap <buffer> <Leader>h : <C-u>echo GOVIMHover()<CR>
 
 " Plugin settings
 "
