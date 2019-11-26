@@ -3,10 +3,14 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdcommenter', { 'tag': '2.5.0' }
 " Buffer handling
 Plug 'jeetsukumaran/vim-buffergator', { 'branch': 'master' }
+" Autocompletion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Python autocompletion
+Plug 'zchee/deoplete-jedi'
 " fuzzy search
 Plug 'kien/ctrlp.vim', { 'branch': 'master' }
 " Golang Plugin
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 " Golang refactoring Plugin
 Plug 'godoctor/godoctor.vim'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
@@ -40,6 +44,12 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'sbdchd/neoformat'
 " Latex
 Plug 'lervag/vimtex'
+" Markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+" Fuzzy search"
+Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " some useful defaults
@@ -121,6 +131,11 @@ let g:vimtex_view_method = "general"
 let g:NERDSpaceDelims = 1
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
+" NeoSnippet
+let g:neosnippet#enable_completed_snippet = 1
+"autocmd CompleteDone * call neosnippet#complete_done()
+
 " Golang
 "
 let g:go_fmt_command = "goimports"
