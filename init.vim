@@ -1,6 +1,8 @@
 call plug#begin('~/.local/share/nvim/plugged')
 " commenting 
 Plug 'scrooloose/nerdcommenter', { 'tag': '2.5.0' }
+" Buffer handling
+Plug 'jeetsukumaran/vim-buffergator', { 'branch': 'master' }
 " fuzzy search
 Plug 'kien/ctrlp.vim', { 'branch': 'master' }
 " Golang Plugin
@@ -22,6 +24,7 @@ Plug 'derekwyatt/vim-fswitch', { 'branch': 'master' }
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.2' }
 " show git line addings
 Plug 'airblade/vim-gitgutter', { 'branch': 'master' }
+Plug 'jreybert/vimagit', { 'branch': 'master' }
 " all about surroundings
 Plug 'tpope/vim-surround', { 'branch': 'master' }
 " emmet for vim
@@ -57,14 +60,27 @@ filetype plugin on
 " set background=light " for the light version
 colorscheme delek
 
-" set number
+" set leader
 let mapleader=","
+set hidden " Hidden buffer
 " Enable spell checking for markdown files
 au BufRead *.md setlocal spell
 au BufRead *.MD setlocal spell
 au BufRead *.markdown setlocal spell
 
+" Set spell checking language
 set spelllang=de
+" Tab handling
+nmap <leader>T :enew<CR>
+" Buffer handling
+nmap <leader>l :bnext<CR>
+nmap <leader>h :bprevious<CR>
+nmap <leader>bq :bp <BAR> bd #<CR>
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
+" Vimagit
+nnoremap <leader>gs :Magit<CR>
 
 " Python3 settings
 let g:python3_host_prog = "/usr/bin/python3"
@@ -80,10 +96,25 @@ colorscheme industry
 autocmd InsertEnter * set number
 autocmd InsertLeave * set relativenumber
 
+" CTRL-P setup
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+
+" Buffergator setup
+let g:buffergator_viewport_split_policy = 'R'
+" Go to the previous buffer open
+nmap <leader>jj :BuffergatorMruCyclePrev<cr>
+" Go to the next buffer open
+nmap <leader>kk :BuffergatorMruCycleNext<cr>
+" View the entire list of buffers open
+nmap <leader>bl :BuffergatorOpen<cr>
+
 " Vimtex
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_method = "general"
-let g:vimtex_viewer_general_viewer = "evince"
+" let g:vimtex_viewer_general_viewer = "evince"
 " NERDCommenter
 "
 " Add spaces after comment delimiters by default
