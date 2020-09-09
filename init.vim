@@ -44,6 +44,8 @@ Plug 'lervag/vimtex'
 " Markdown
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+" Definition search
+Plug 'pechorin/any-jump.vim'
 " Fuzzy search"
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
@@ -67,7 +69,6 @@ filetype plugin on
 " set background=light " for the light version
 colorscheme delek
 
-" set number
 let mapleader=","
 " Enable spell checking for markdown files
 au BufRead *.md setlocal spell
@@ -85,12 +86,15 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.aux$','\.fdb_latexmk$','\.fls$','\.synctex.gz$','\.lof$','\.tdo$','\.toc$','\.out$','\.blg$','\.bbl$']
 " relative line numbers
 set relativenumber
+set number
 colorscheme industry
 " but not on insert mode
 autocmd InsertEnter * set number
 autocmd InsertLeave * set relativenumber
 
+
 " Vimtex
+let g:tex_flavor = 'latex'
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_method = "general"
 let g:vimtex_viewer_general_viewer = "evince"
